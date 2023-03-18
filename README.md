@@ -8,6 +8,9 @@ Run docker-compose:
 
 docker-compose up --build
 
+For meta: http://localhost:5000/get_meta
+
 Test localhost api in your browser by navigating to: http://localhost:5000/get_data?data_type=video_games&snippet=false
+
 
 NOTE:'snippet=false' means all data will be shown 'snippet=true' means first 20 pieces of data will be shown
