@@ -70,6 +70,15 @@ def get_data():
         context["@list"].append(result)
         conn.close()
     return jsonify(context)
+@app.route('/get_meta', methods=['GET'])
+def get_data_meta():
+    context_meta = {
+        "@context": {
+            "@schema": "SQLite"
+        },
+        "video_games1": "Title,Features.Handheld?,Features.Max Players,Features.Multiplatform,Features.Online?,Metadata.Genres,Metadata.Licensed?,Metadata.Publishers,Metadata.Sequel?,Metrics.Review Score,Metrics.Sales,Metrics.Used Price,Release.Console,Release.Rating,Release.Re-release?,Release.Year,Length.All PlayStyles.Average,Length.All PlayStyles.Leisure,Length.All PlayStyles.Median,Length.All PlayStyles.Polled,Length.AllPlayStyles.Rushed,Length.Completionists.Average,Length.Completionists.Leisure,Length.Completionists.Median,Length.Completionists.Polled,Length.Completionists.Rushed,Length.Main + Extras.Average,Length.Main + Extras.Leisure,Length.Main + Extras.Median,Length.Main + Extras.Polled,Length.Main + Extras.Rushed,Length.Main Story.Average,Length.Main Story.Leisure,Length.Main Story.Median,Length.Main Story.Polled,Length.Main Story.Rushed",
+     }
+    return jsonify(context_meta)
 
 if __name__ == '__main__':
     if os.environ.get('PORT') is not None:
